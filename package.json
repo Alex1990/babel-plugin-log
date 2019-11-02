@@ -1,0 +1,46 @@
+{
+  "name": "babel-plugin-log",
+  "version": "0.1.0",
+  "description": "A babel plugin to help to print useful debug log",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "standard src/**/*.js test/index.js",
+    "test": "npm run lint && jest",
+    "test:coverage": "npm test -- --coverage"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "{src,test}/*.js": [
+      "standard --fix",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alex1990/babel-plugin-log.git"
+  },
+  "keywords": [
+    "babel-plugin",
+    "log",
+    "console"
+  ],
+  "author": "Alex Chao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Alex1990/babel-plugin-log/issues"
+  },
+  "homepage": "https://github.com/Alex1990/babel-plugin-log#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "glob": "^7.1.5",
+    "husky": "^3.0.9",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.4.2",
+    "lodash": "^4.17.15",
+    "standard": "^14.3.1"
+  }
+}
