@@ -29,7 +29,7 @@ module.exports = function ({ types: t }) {
         const args = path.node.arguments
         const newArgs = []
 
-        path.node.arguments.forEach((arg, index) => {
+        args.forEach((arg, index) => {
           const label = getExpressionLiteral(arg, path)
           if (t.isLiteral(arg)) {
             if (t.isStringLiteral(arg)) {
@@ -42,8 +42,7 @@ module.exports = function ({ types: t }) {
           newArgs.push(t.stringLiteral(label), arg)
         })
 
-        args.length = 0
-        args.push(...newArgs)
+        path.node.arguments = newArgs
       }
     }
   }
