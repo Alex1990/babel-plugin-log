@@ -18,8 +18,7 @@ function getExpressionLiteral (expression, path) {
   return path.hub.file.code.slice(start, end)
 }
 
-module.exports = function ({ types: t }, state) {
-  console.log('state', state)
+module.exports = function ({ types: t }) {
   return {
     visitor: {
       CallExpression (path) {
