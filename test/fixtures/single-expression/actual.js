@@ -1,3 +1,6 @@
 console.log(1 + 2)
 console.log(a + b)
 console.log((a + b) * c)
+console.log(() => {})
+console.log(async () => {})
+console.log(class Person {})
